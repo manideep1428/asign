@@ -72,8 +72,8 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 
 For **backend** (`.env`):
 ```env
-SECRET_KEY=your_secret_key
-DATABASE_URL=sqlite:///./database.db
+SECRET_KEY=
+SECRET_URL=
 ```
 
 ---
