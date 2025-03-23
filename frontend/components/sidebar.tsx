@@ -1,15 +1,11 @@
 'use client'
 
 import { Home, Briefcase, BarChart2, PenToolIcon as Tool, FileText } from "lucide-react"
-import { toast } from "@/hooks/use-toast"
+import { toast } from "sonner"
 
 
 const handleToast = () => {
-  toast({title: "Work in Progress by developer" ,
-    description: "Please wait for the feature to be implemented",
-    duration: 5000,
-    variant: "destructive"
-  })
+  toast("Work in progress")
 }
 
 export function Sidebar() {

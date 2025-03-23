@@ -3,17 +3,13 @@ import Link from 'next/link'
 import { Bell, Search, Users, LogOut } from "lucide-react"
 import React from 'react'
 import { usePathname } from 'next/navigation'
-import { toast } from '@/hooks/use-toast'
 import Image from 'next/image'
+import { toast } from 'sonner'
 export default function Topbar() {
   const pathName = usePathname();
   
   const handleToast = () => {
-    toast({title: "Work in Progress by developer" ,
-      description: "Please wait for the feature to be implemented",
-      duration: 5000,
-      variant: "destructive"
-    })
+    toast("Work in Progress by developer")
   }
 
   return (
