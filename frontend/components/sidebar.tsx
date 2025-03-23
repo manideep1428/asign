@@ -1,20 +1,27 @@
-import Link from "next/link"
+'use client'
+
 import { Home, Briefcase, BarChart2, PenToolIcon as Tool, FileText } from "lucide-react"
+import { toast } from "@/hooks/use-toast"
 
 
-
-
+const handleToast = () => {
+  toast({title: "Work in Progress by developer" ,
+    description: "Please wait for the feature to be implemented",
+    duration: 5000,
+    variant: "destructive"
+  })
+}
 
 export function Sidebar() {
   return (
     <div className="w-48 bg-black border-r border-gray-800 p-4 flex flex-col">
       <div className="mt-8 space-y-2">
         <div className="bg-gray-800 rounded p-3">
-          <div className="text-sm font-medium">PHA</div>
+          <div className="text-sm font-medium hover:text-white cursor-pointer">PHA</div>
         </div>
-        <div className="px-3 py-2 text-sm text-gray-400">Fund Analysis</div>
-        <div className="px-3 py-2 text-sm text-gray-400">Holdings</div>
-        <div className="px-3 py-2 text-sm text-gray-400">Transactions</div>
+        <div onClick={()=>handleToast} className="px-3 py-2 text-sm text-gray-400 hover:text-white cursor-pointer">Fund Analysis</div>
+        <div  onClick={()=>handleToast} className="px-3 py-2 text-sm text-gray-400 hover:text-white cursor-pointer">Holdings</div>
+        <div onClick={()=>handleToast} className="px-3 py-2 text-sm text-gray-400 hover:text-white cursor-pointer">Transactions</div>
       </div>
     </div>
   )

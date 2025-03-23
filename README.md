@@ -14,8 +14,8 @@ This project consists of a **Next.js** frontend managed with **pnpm** and a **Fa
 
 ### 1. Clone the Repository
 ```sh
-git clone <repo_url>
-cd <repo_directory>
+git clone https://github.com/manideep1428/asign.git
+cd asign
 ```
 
 ### 2. Setup the Frontend (Next.js with pnpm)

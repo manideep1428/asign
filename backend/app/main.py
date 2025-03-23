@@ -6,8 +6,8 @@ from app.api import investements
 app = FastAPI(title="Investment Tracker API")
 
 origins = [
-    "http://localhost:3000",  # Local Next.js frontend
-    "https://your-frontend-domain.com",  # Deployed frontend
+    "http://localhost:3000",  
+    ""
 ]
 
 

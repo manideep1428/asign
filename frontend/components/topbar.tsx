@@ -4,7 +4,7 @@ import { Bell, Search, Users, LogOut } from "lucide-react"
 import React from 'react'
 import { usePathname } from 'next/navigation'
 import { toast } from '@/hooks/use-toast'
-
+import Image from 'next/image'
 export default function Topbar() {
   const pathName = usePathname();
   
@@ -17,11 +17,11 @@ export default function Topbar() {
   }
 
   return (
-    <header className="border-b border-gray-800 bg-black relative">
+    <header className="border-b border-gray-800 bg-black py-4 relative z-10">
       <div className="container flex h-14 items-center justify-between">
         <div className="flex items-center space-x-8">
-          <div className="text-blue-500 text-3xl font-bold">d</div>
-          <nav className="flex items-center space-x-6">
+          <Image src="/logo.svg" alt="logo" width={24} height={24} />
+          <nav className="flex items-center space-x-6  px-10">
             <Link href="/" className={`text-sm font-bold ${pathName === "/" ? "border-b-2 border-blue-500 -2" : "text-gray-400 hover:text-white"}`}>
               Home
             </Link>
