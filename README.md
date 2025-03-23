@@ -6,7 +6,7 @@ This project consists of a **Next.js** frontend managed with **pnpm** and a **Fa
 ## Tech Stack
 - **Frontend:** Next.js, TypeScript, pnpm, Tailwind CSS
 - **Backend:** FastAPI, Python, venv
-- **Package Manager:** pnpm (for frontend), pip (for backend)
+- **Package Manager:** pnpm (for frontend), uv pip (for backend)
 
 ---
 
@@ -35,12 +35,16 @@ This will start the Next.js development server at `http://localhost:3000`.
 ### 3. Setup the Backend (FastAPI with venv)
 ```sh
 cd backend
-python -m venv venv
-source venv/bin/activate  # On macOS/Linux
+
+# Install uv if not installed
+pip install uv
+
+uv venv 
+source .venv/bin/activate  # On macOS/Linux
 # or
 venv\Scripts\activate  # On Windows
 
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 #### Run the Backend

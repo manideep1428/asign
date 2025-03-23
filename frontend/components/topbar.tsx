@@ -40,7 +40,7 @@ export default function Topbar() {
           </nav>
 
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 gap-4">
           <button className="text-gray-400 hover:text-white">
             <Search className="h-5 w-5" />
           </button>
