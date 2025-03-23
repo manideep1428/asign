@@ -3,9 +3,19 @@ import Link from 'next/link'
 import { Bell, Search, Users, LogOut } from "lucide-react"
 import React from 'react'
 import { usePathname } from 'next/navigation'
+import { toast } from '@/hooks/use-toast'
 
 export default function Topbar() {
   const pathName = usePathname();
+  
+  const handleToast = () => {
+    toast({title: "Work in Progress by developer" ,
+      description: "Please wait for the feature to be implemented",
+      duration: 5000,
+      variant: "destructive"
+    })
+  }
+
   return (
     <header className="border-b border-gray-800 bg-black relative">
       <div className="container flex h-14 items-center justify-between">
@@ -18,13 +28,13 @@ export default function Topbar() {
             <Link href="/portfolio" className={`text-sm font-bold ${pathName === "/portfolio" ? "border-b-2 border-blue-500 " : "text-gray-400 hover:text-white"}`}>
               Portfolio
             </Link>
-            <Link href="/mutual-funds" className={`text-sm font-bold ${pathName === "/mutual-funds" ? "border-b-2 border-blue-500 " : "text-gray-400 hover:text-white"}`}>
+            <Link href="/mutual-funds" onClick={()=>handleToast()} className={`text-sm font-bold ${pathName === "/mutual-funds" ? "border-b-2 border-blue-500 " : "text-gray-400 hover:text-white"}`}>
               Mutual Funds
             </Link>
-            <Link href="/tools" className={`text-sm font-bold ${pathName === "/tools" ? "border-b-2 border-blue-500 " : "text-gray-400 hover:text-white"}`}>
+            <Link href="/tools" onClick={()=>handleToast()}  className={`text-sm font-bold ${pathName === "/tools" ? "border-b-2 border-blue-500 " : "text-gray-400 hover:text-white"}`}>
               Tools
             </Link>
-            <Link href="/transactions" className={`text-sm font-bold ${pathName === "/transactions" ? "border-b-2 border-blue-500 " : "text-gray-400 hover:text-white"}`}>
+            <Link href="/transactions" onClick={()=>handleToast()}  className={`text-sm font-bold ${pathName === "/transactions" ? "border-b-2 border-blue-500 " : "text-gray-400 hover:text-white"}`}>
               Transactions
             </Link>
           </nav>

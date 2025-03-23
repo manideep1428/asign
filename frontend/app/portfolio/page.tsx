@@ -10,7 +10,8 @@ export default function Home() {
     <div className="flex min-h-screen bg-black text-white">
       <Sidebar />
       <main className="flex-1 p-6">
-        <DashboardHeader name="Yashna" subtitle="Evaluate Your Investment Performance" />
+        {/* name comes from DB here   */}
+        <DashboardHeader name="Manideep" subtitle="Evaluate Your Investment Performance" />
 
         <InvestmentSummary />
 
