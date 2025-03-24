@@ -1,3 +1,9 @@
 fastapi
 uvicorn
 supabase
+jwt
+python-dotenv
+python-decouple
+python-jose
+python-requests
+python-sqlalchemy
