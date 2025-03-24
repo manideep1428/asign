@@ -23,7 +23,11 @@ export const useInvestmentStore = create<InvestmentStore>((set) => ({
   funds: [],
   fetchInvestments: async () => {
     try {
-      const response = await axios.get<FundData[]>(BACKEND_URL+ "/api/investments")
+      const response = await axios.get<FundData[]>(BACKEND_URL+ "/api/investments" ,
+        { headers: {
+          "x-vercel-protection-bypass" : "jt6c7Tn7UVErZTBzrlkWvEQo1Y8B4z70"
+        }}
+      )
       const data: FundData[] = response.data
       set({ funds: data })
     } catch (error) {

@@ -32,7 +32,11 @@ export const useMutualFundsStore = create<MutualFundsState>((set) => ({
   fetchFunds: async () => {
     try {
       set({ loading: true, error: null });
-      const response = await axios.get<MutualFund[]>(`${BACKEND_URL}/api/mutual-funds`);
+      const response = await axios.get<MutualFund[]>(`${BACKEND_URL}/api/mutual-funds`,
+        { headers: {
+          "x-vercel-protection-bypass" : "jt6c7Tn7UVErZTBzrlkWvEQo1Y8B4z70"
+        }}
+      );
       const data = response.data;
       
       if (data.length === 0) {
