@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
+import { BACKEND_URL } from "@/config";
 
 export interface MutualFund {
   id: string;
@@ -31,7 +32,7 @@ export const useMutualFundsStore = create<MutualFundsState>((set) => ({
   fetchFunds: async () => {
     try {
       set({ loading: true, error: null });
-      const response = await axios.get<MutualFund[]>("http://localhost:8000/api/mutual-funds");
+      const response = await axios.get<MutualFund[]>(`${BACKEND_URL}/api/mutual-funds`);
       const data = response.data;
       
       if (data.length === 0) {

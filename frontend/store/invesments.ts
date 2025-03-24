@@ -1,3 +1,4 @@
+import { BACKEND_URL } from "@/config"
 import axios from "axios"
 import { create } from "zustand"
 
@@ -22,7 +23,7 @@ export const useInvestmentStore = create<InvestmentStore>((set) => ({
   funds: [],
   fetchInvestments: async () => {
     try {
-      const response = await axios.get<FundData[]>("http://localhost:8000/api/investments")
+      const response = await axios.get<FundData[]>(BACKEND_URL+ "/api/investments")
       const data: FundData[] = response.data
       set({ funds: data })
     } catch (error) {

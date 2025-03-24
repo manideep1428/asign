@@ -55,3 +55,4 @@ alembic/versions/
 
 # FastAPI-specific
 instance/
+.vercel
